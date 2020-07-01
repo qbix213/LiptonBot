@@ -1,8 +1,16 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const ytdl = require('ytdl-core');
+const { prefix, token } = require("./config.json");
+
 
 const client = new Discord.Client();
+
+const queue = new Map();
 //const commands = "$zaproszenie", "$facebook";
+
+
+
 
 const commands = [
     {
@@ -16,6 +24,27 @@ const commands = [
     {
         "name": "$sklep",
         "description": "Wyświetla sklep serwera z vc, własnymi rangami itd"
+    },
+    {
+        "name": "$kick",
+        "description": "Wyrzuca użytkownika z serwera"
+    },
+    {
+        "name": "$ban",
+        "description": "Banuje użytkownika serwera"
+    },
+    {
+        "name": "$serwer",
+        "description": "Wyświetla informacje o serwerze"
+
+    },
+    {
+        "name": "$user-info",
+        "description": "Wyświetla informacje o użytkowniku"
+    },
+    {
+        "name": "$hello",
+        "description": "Wysyła GIF z machającą ręką"
     }
 
 
@@ -258,18 +287,38 @@ const unwarn = [
         "description": "Czekaj, aż usunę ci warna"
     }
 ]
+
+const invite = [
+    {
+        "name": "",
+        "description": "https://discord.gg/ySyhBbC"
+    }
+]
+
 //status bota: W grze Alpha 1.1.0 by xxdamixx
 
 client.on("ready",() => {
     console.log("Bot is ready!");
-    client.user.setActivity("Alpha 1.1.0 by xxdamixx",{type: 'PLAYING'});
+    client.user.setActivity("Alpha 1.1.0 by neoney🌈",{type: 'PLAYING'});
 })
 
 
 
+
+
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.cache.find(ch => ch.name === '👋witajcie-na-serwerze');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    // Send the message, mentioning the member
+    channel.send(`Witaj na serwerze, ${member}. Nie zapomnij przeczytać kanału #📜regulamin`);
+  });
+
+
+
 client.on('message', async message => {
-    if (message.content === "$zaproszenie")  message.channel.send("Zaproszenie na serwer: https://discord.gg/ySyhBbC")
-    if (message.content === "$facebook") message.channel.send("Ta komenda nie jest narazie dostępna")
 
 
     if (message.content === "$help"){
@@ -404,10 +453,145 @@ client.on('message', async message => {
         msg = msg.slice(0, -1)
         let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić unwarn**", msg);
         message.channel.send(embed)
+    }
+    
+    
+    if (message.content === "$zaproszenie"){
+        let msg = "";
+        for (const command of invite){
+            msg += `${command.name} ${command.description}\n`
+        }
+        msg = msg.slice(0, -1)
+        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Zaproszenie na serwer**", msg);
+        message.channel.send(embed)
     }  
+
+    if (message.content === `$serwer`) {
+        message.channel.send(`Nazwa serwera: ${message.guild.name}\nRazem osób: ${message.guild.memberCount}`);
+    }
+
+    if (message.content === `$user-info`) {
+        message.channel.send(`Twój nick: ${message.author.username}\nTwoje ID: ${message.author.id}\nTwój nick i tag: ${message.author.tag}\nUtworzyłeś konto: ${message.author.createdAt}`);
+    }
+
+    if (message.content.startsWith("$hello")) {
+        message.channel.send({files: ['wave.gif']});
+    }
+
+    
+
+
+
+
+
+    // Ignore messages that aren't from a guild
+    if (!message.guild) return;
+  
+    // If the message content starts with "!kick"
+    if (message.content.startsWith('$kick')) {
+      // Assuming we mention someone in the message, this will return the user
+      // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+      const user = message.mentions.users.first();
+      // If we have a user mentioned
+      if (user) {
+        // Now we get the member from the user
+        const member = message.guild.member(user);
+        // If the member is in the guild
+        if (member) {
+          /**
+           * Wyrzuca członka
+           * Upewnij się, że wyrzuciłeś członka nie uzytkownika
+           */
+          member
+            .kick('Optional reason that will display in the audit logs')
+            .then(() => {
+              // We let the message author know we were able to kick the person
+              message.reply(`Pomyślnie skickowano ${user.tag}`);
+            })
+            .catch(err => {
+              // An error happened
+              // This is generally due to the bot not being able to kick the member,
+              // either due to missing permissions or role hierarchy
+              message.reply('Nie mogę wyrzucić tego użytkownika z serwera :cry:');
+              // Log the error
+              console.error(err);
+            });
+        } else {
+          // The mentioned user isn't in this guild
+          message.reply("That user isn't in this guild!");
+        }
+        // Otherwise, if no user was mentioned
+      } else {
+        message.reply("Nie masz kogo skickować!");
+      }
+    }
+  
+  
+
+
+    // Ignore messages that aren't from a guild
+    if (!message.guild) return;
+  
+    // if the message content starts with "!ban"
+    if (message.content.startsWith('$ban')) {
+      // Assuming we mention someone in the message, this will return the user
+      // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+      const user = message.mentions.users.first();
+      // If we have a user mentioned
+      if (user) {
+        // Now we get the member from the user
+        const member = message.guild.member(user);
+        // If the member is in the guild
+        if (member) {
+          /**
+           * Ban the member
+           * Make sure you run this on a member, not a user!
+           * There are big differences between a user and a member
+           * Read more about what ban options there are over at
+           * https://discord.js.org/#/docs/main/master/class/GuildMember?scrollTo=ban
+           */
+          member
+            .ban({
+              reason: 'They were bad!',
+            })
+            .then(() => {
+              // We let the message author know we were able to ban the person
+              message.reply(`Pomyślnie zbanowano ${user.tag}`);
+            })
+            .catch(err => {
+              // An error happened
+              // This is generally due to the bot not being able to ban the member,
+              // either due to missing permissions or role hierarchy
+              message.reply('Nie mogę zbanować tego użytkownika :cry:');
+              // Log the error
+              console.error(err);
+            });
+        } else {
+          // The mentioned user isn't in this guild
+          message.reply("That user isn't in this guild!");
+        }
+      } else {
+        // Otherwise, if no user was mentioned
+        message.reply("Nie masz kogo zbanować!");
+      }
+    }
+
+    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "kurwa", "japierdole", "spierdalaj", "Nexe"]
+    let foundInText = false;
+    for(var i in blacklisted) {
+        if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
+    }
+
+    if(foundInText) {
+        message.delete();
+        message.channel.send("")
+        .then(m => m.delete(10000));
+    }
 
 
     
-})
+
+     
+  });
 
 client.login(config.token);
