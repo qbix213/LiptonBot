@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const ytdl = require('ytdl-core');
+const prefix = "$"
 
 
 const client = new Discord.Client();
@@ -585,6 +586,7 @@ client.on('message', async message => {
         message.channel.send("")
         .then(m => m.delete(10000));
     }
+
 
 
     
