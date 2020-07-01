@@ -593,3 +593,8 @@ client.on('message', async message => {
   });
 
 client.login(process.env.BOT_TOKEN);
+require("http").createServer((res, _) => {
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    res.write("14");
+    res.end();
+}).listen(process.env.PORT);
