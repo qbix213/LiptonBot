@@ -566,7 +566,7 @@ client.on('message', async message => {
             });
         } else {
           // The mentioned user isn't in this guild
-          message.reply("That user isn't in this guild!");
+          message.reply("Tego użytkownika nie ma na serwerze!");
         }
       } else {
         // Otherwise, if no user was mentioned
@@ -574,7 +574,7 @@ client.on('message', async message => {
       }
     }
 
-    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "kurwa", "japierdole", "spierdalaj", "Nexe"]
+    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe"]
     let foundInText = false;
     for(var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
