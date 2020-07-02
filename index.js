@@ -18,7 +18,7 @@ const commands = [
     {
         "name": "$help moderacja",
         "description": "Wyświetla komendy przydatne dla moderacji"
-    }
+    },
     {
         "name": "$zaproszenie",
         "description": "Wysyła zaproszenie do dołączenia na serwer"
