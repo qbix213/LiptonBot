@@ -570,7 +570,7 @@ client.on('message', async message => {
         }
       } else {
         // Otherwise, if no user was mentioned
-        message.reply(":exclamation:**Błąd**");
+        message.channel.send(":exclamation:**Błąd**");
       }
     }
 
