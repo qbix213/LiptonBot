@@ -16,20 +16,16 @@ const commands = [
         "description": "Wyświetla tą liste komend"
     },
     {
+        "name": "$help moderacja",
+        "description": "Wyświetla komendy przydatne dla moderacji"
+    }
+    {
         "name": "$zaproszenie",
         "description": "Wysyła zaproszenie do dołączenia na serwer"
     },
     {
         "name": "$sklep",
         "description": "Wyświetla sklep serwera z vc, własnymi rangami itd"
-    },
-    {
-        "name": "$kick",
-        "description": "Wyrzuca użytkownika z serwera"
-    },
-    {
-        "name": "$ban",
-        "description": "Banuje użytkownika serwera"
     },
     {
         "name": "$serwer",
@@ -46,6 +42,17 @@ const commands = [
     }
 
 
+]
+
+const modehelp = [
+    {
+        "name": "kick",
+        "description": "Wyrzuca użytkownika z serwera"
+    },
+    {
+        "name": "ban",
+        "description": "Banuje użytkownika"
+    }
 ]
 
 const store = [
@@ -326,6 +333,17 @@ client.on('message', async message => {
         }
         msg = msg.slice(0, -1)
         let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Aktualna lista komend**", msg);
+        message.channel.send(embed)
+    }  
+
+
+    if (message.content === "$help moderacja"){
+        let msg = "";
+        for (const command of modehelp){
+            msg += `${command.name} - ${command.description}\n`
+        }
+        msg = msg.slice(0, -1)
+        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Lista komend dla moderacji**", msg);
         message.channel.send(embed)
     }  
 
