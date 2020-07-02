@@ -46,11 +46,11 @@ const commands = [
 
 const modehelp = [
     {
-        "name": "kick",
+        "name": "$kick",
         "description": "Wyrzuca użytkownika z serwera"
     },
     {
-        "name": "ban",
+        "name": "$ban",
         "description": "Banuje użytkownika"
     }
 ]
