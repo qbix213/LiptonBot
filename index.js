@@ -52,6 +52,14 @@ const modehelp = [
     {
         "name": "$ban",
         "description": "Banuje użytkownika"
+    },
+    {
+        "name": "$warn",
+        "description": "Daje warna. Przykład: $warn @jankowalski Spam (według kanału regulamin) [OFF]"
+    },
+    {
+        "name": "$mute",
+        "description": "Wycisza użytkownika. Przykład: $mute @jankowalski 15s Spam [OFF]"
     }
 ]
 
