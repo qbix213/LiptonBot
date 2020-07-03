@@ -612,7 +612,6 @@ client.on('message', async message => {
         .then(m => m.delete(10000));
     }
 
-    if (message.content === "@SmileBot") message.channel.send("W czym mogę pomóc?")
 
 
 
