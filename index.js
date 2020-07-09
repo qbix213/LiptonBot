@@ -113,7 +113,7 @@ const nick = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 5000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 5000"
     },
     {
         "name": "3",
@@ -132,7 +132,7 @@ const role = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 100000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 100000"
     },
     {
         "name": "3",
@@ -151,7 +151,7 @@ const color = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 30000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 30000"
     },
     {
         "name": "3",
@@ -170,7 +170,7 @@ const name = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 30000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 30000"
     },
     {
         "name": "3",
@@ -189,7 +189,7 @@ const voicechat = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 200000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 200000"
     },
     {
         "name": "3",
@@ -212,7 +212,7 @@ const value = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 10000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 10000"
     },
     {
         "name": "3",
@@ -231,7 +231,7 @@ const whitelist = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 5000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 5000"
     },
     {
         "name": "3",
@@ -250,7 +250,7 @@ const voicechatname = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 20000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 20000"
     },
     {
         "name": "3",
@@ -270,7 +270,7 @@ const unban = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 150000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 150000"
     },
     {
         "name": "3",
@@ -289,7 +289,7 @@ const unwarn = [
     },
     {
         "name": "2",
-        "description": "Wpłać pieniądze: !give-money @LiptonawkaBot 25000"
+        "description": "Wpłać pieniądze: !give-money @SmileBot 25000"
     },
     {
         "name": "3",
