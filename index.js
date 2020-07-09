@@ -312,7 +312,7 @@ const invite = [
 
 client.on("ready",() => {
     console.log("Bot is ready!");
-    client.user.setActivity("Alpha 1.1.0 by neoney🌈",{type: 'PLAYING'});
+    client.user.setActivity("$help",{type: 'PLAYING'});
 })
 
 
