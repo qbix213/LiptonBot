@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 const ytdl = require('ytdl-core');
-
-
 const client = new Discord.Client();
 
 const queue = new Map();
+const welcome = require(`welcome.js`)
+const prefix = "$"
 //const commands = "$zaproszenie", "$facebook";
 
 
@@ -316,18 +316,8 @@ client.on("ready",() => {
 })
 
 
+client.on('guildMemberAdd', welcome.welcome);
 
-
-
-// Create an event listener for new guild members
-client.on('guildMemberAdd', member => {
-    // Send the message to a designated channel on a server:
-    const channel = member.guild.channels.cache.find(ch => ch.name === '👋witajcie-na-serwerze');
-    // Do nothing if the channel wasn't found on this server
-    if (!channel) return;
-    // Send the message, mentioning the member
-    channel.send(`Witaj na serwerze, ${member}. Nie zapomnij przeczytać kanału <#720731754507272294>`);
-  });
 
 
 
