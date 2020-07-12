@@ -326,7 +326,7 @@ client.on('guildMemberAdd', member => {
     // Do nothing if the channel wasn't found on this server
     if (!channel) return;
     // Send the message, mentioning the member
-    channel.send(`Witaj na serwerze, ${member}. Nie zapomnij przeczytać kanału #📜regulamin`);
+    channel.send(`Witaj na serwerze, ${member}. Nie zapomnij przeczytać kanału <#720731754507272294>`);
   });
 
 
