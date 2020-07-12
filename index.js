@@ -3,7 +3,7 @@ const ytdl = require('ytdl-core');
 const client = new Discord.Client();
 
 const queue = new Map();
-const welcome = require(`welcome.js`)
+const welcome = require(`./welcome.js`)
 const prefix = "$"
 //const commands = "$zaproszenie", "$facebook";
 
