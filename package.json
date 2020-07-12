@@ -1,11 +1,11 @@
 {
-    "name": "testowy_bot",
+    "name": "smilebot",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
         "start": "node ."
     },
-    "author": "qbix213",
+    "author": "neoney",
     "license": "ISC",
     "dependencies": {
         "@discordjs/opus": "^0.3.2",
