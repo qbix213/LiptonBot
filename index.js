@@ -502,6 +502,9 @@ client.on('message', async message => {
         message.channel.send({files: ['wave.gif']});
     }
 
+
+    if (message.content === "14")return (message.channel.send = "Oj tak byczq +1")
+
     
 
 
