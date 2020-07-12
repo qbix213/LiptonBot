@@ -1,16 +1,17 @@
-// Ignore messages that aren't from a guild
+exports.kick = ('message', async message => {
+// Ignoruj wiadomości, których nie ma na serwerze
 if (!message.guild) return;
   
-// If the message content starts with "!kick"
+// Jeśli treść wiadomości rozpoczyna się od "$kick"
 if (message.content.startsWith('$kick')) {
-  // Assuming we mention someone in the message, this will return the user
-  // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
+  // Zakładamy, że wspominamy o kimś
+  // Przeczytaj więcej o wzmiankach na stronie https://discord.js.org/#/docs/main/master/class/MessageMentions
   const user = message.mentions.users.first();
   // If we have a user mentioned
   if (user) {
-    // Now we get the member from the user
+    // Teraz zamieniamy użytkownika na członka
     const member = message.guild.member(user);
-    // If the member is in the guild
+    // Jeśli członek jest na serwerze
     if (member) {
       /**
        * Wyrzuca członka
@@ -23,7 +24,7 @@ if (message.content.startsWith('$kick')) {
           message.channel.send(`:white_check_mark:**Sukces**`);
         })
         .catch(err => {
-          // An error happened
+          // Wystąpił błąd
           // This is generally due to the bot not being able to kick the member,
           // either due to missing permissions or role hierarchy
           message.channel.send(':exclamation:**Błąd**');
@@ -39,3 +40,5 @@ if (message.content.startsWith('$kick')) {
     message.channel.send(":exclamation:**Błąd**");
   }
 }
+
+});

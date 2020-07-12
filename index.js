@@ -4,8 +4,12 @@ const client = new Discord.Client();
 
 const queue = new Map();
 const welcome = require(`./welcome.js`)
+const ban = require(`./ban.js`)
+const kick = require(`./kick.js`)
+const leave = require(`./leave.js`)
+const embeds = require(`./embeds.js`)
 const prefix = "$"
-//const commands = "$zaproszenie", "$facebook";
+//const commands = "$help", "$help moderacja", "$zaproszenie", "$sklep", "$serwer", "$user-info", "$hello"
 
 
 
@@ -44,7 +48,7 @@ const commands = [
 
 ]
 
-const modehelp = [
+const moderationhelp = [
     {
         "name": "$kick",
         "description": "Wyrzuca użytkownika z serwera"
@@ -308,7 +312,7 @@ const invite = [
     }
 ]
 
-//status bota: W grze Alpha 1.1.0 by xxdamixx
+//status bota: W grze $help
 
 client.on("ready",() => {
     console.log("Bot is ready!");
@@ -317,7 +321,10 @@ client.on("ready",() => {
 
 
 client.on('guildMemberAdd', welcome.welcome);
-
+client.on('guildMemberRemove', leave.leave);
+client.on('client.on', ban.ban);
+client.on('client.on', kick.kick);
+client.on('client.on', embeds.embeds);
 
 
 
@@ -337,7 +344,7 @@ client.on('message', async message => {
 
     if (message.content === "$help moderacja"){
         let msg = "";
-        for (const command of modehelp){
+        for (const command of moderationhelp){
             msg += `${command.name} - ${command.description}\n`
         }
         msg = msg.slice(0, -1)
@@ -492,10 +499,10 @@ client.on('message', async message => {
         message.channel.send({files: ['wave.gif']});
     }
 
+    if  (message.content === `$`) {
+        message.channel.send(`Twoja ostatnia wiadomość: ${message.author.lastMessage}`)
+    }
 
-    if (message.content === "14")return (message.channel.send = "Oj tak byczq +1")
-
-    
 
 
 
@@ -593,7 +600,8 @@ client.on('message', async message => {
       }
     }
 
-    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam", "podszywasz", "neoney"]
+
+    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam", "podszywasz"]
     let foundInText = false;
     for(var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
