@@ -3,10 +3,14 @@ const ytdl = require('ytdl-core');
 const client = new Discord.Client();
 
 const queue = new Map();
+//welcome & leave
 const welcome = require(`./welcome.js`)
-const ban = require(`./ban.js`)
-const kick = require(`./kick.js`)
 const leave = require(`./leave.js`)
+//moderation
+const ban = require(`./moderation/ban`)
+const kick = require(`./moderation/kick`)
+const mute = require(`./moderation/mute`)
+// nwm co to
 const embeds = require(`./embeds.js`)
 const prefix = "$"
 //const commands = "$help", "$help moderacja", "$zaproszenie", "$sklep", "$serwer", "$user-info", "$hello"
