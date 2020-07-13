@@ -10,7 +10,19 @@ const leave = require(`./leave.js`)
 const embeds = require(`./embeds.js`)
 const prefix = "$"
 //const commands = "$help", "$help moderacja", "$zaproszenie", "$sklep", "$serwer", "$user-info", "$hello"
-
+//const moderationhelp = "$kick", "$ban", "$warn", "$mute"
+//const store = "$kup nick", "$kup rola", "$kup kolor", "$kup nazwa", "$kup vc", "$kup pojemność",
+//"$kup whitelista", "$kup vc nazwa", "$kup unban", "$kup unwarn"
+//const nick
+//const role
+//const color
+//const name
+//const voicechat
+//const value
+//const whitelist
+//const voicechatname
+//const unban
+//const unwarn
 
 
 
@@ -324,7 +336,7 @@ client.on('guildMemberAdd', welcome.welcome);
 client.on('guildMemberRemove', leave.leave);
 client.on('client.on', ban.ban);
 client.on('client.on', kick.kick);
-client.on('client.on', embeds.embeds);
+client.on('message', embeds.embeds);
 
 
 
