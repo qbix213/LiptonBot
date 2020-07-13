@@ -1,8 +1,6 @@
 exports.ban = ('message', async message => {
-// Zignoruj wiadomości, których nie ma na serwerze
 if (!message.guild) return;
   
-// Jeśli treść wiadomości rozpoczyna się "$ban"
 if (message.content.startsWith('$ban')) {
   // Zakładamy, że wspominamy o kimś w wiadomości
   // Przeczytaj więcej o wzmiankach na stronie https://discord.js.org/#/docs/main/master/class/MessageMentions

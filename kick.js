@@ -1,8 +1,6 @@
 exports.kick = ('message', async message => {
-// Ignoruj wiadomości, których nie ma na serwerze
 if (!message.guild) return;
   
-// Jeśli treść wiadomości rozpoczyna się od "$kick"
 if (message.content.startsWith('$kick')) {
   // Zakładamy, że wspominamy o kimś
   // Przeczytaj więcej o wzmiankach na stronie https://discord.js.org/#/docs/main/master/class/MessageMentions
