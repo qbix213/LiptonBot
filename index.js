@@ -521,7 +521,7 @@ client.on('message', async message => {
 
 
 
-    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam", "podszywasz", "pls kitty", "pls porn", "pls porngif", "pls boobies", "pls booty", "pls ass"]
+    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam", "podszywasz", "pls kitty", "pls porn", "pls porngif", "pls boobies", "pls booty", "pls ass", "porn"]
     let foundInText = false;
     for(var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
