@@ -1,4 +1,4 @@
-exports.embeds = 'message', async message => {
+exports.embeds = ('message', async message => {
     // If the message is "how to embed"
     if (message.content === '$embed') {
       // We can create embeds using the MessageEmbed constructor
@@ -15,4 +15,4 @@ exports.embeds = 'message', async message => {
       message.channel.send(embed);
     }
 
-  };
+  });
