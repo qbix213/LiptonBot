@@ -10,6 +10,7 @@ const leave = require(`./leave.js`)
 const ban = require(`./moderation/ban`)
 const kick = require(`./moderation/kick`)
 const mute = require(`./moderation/mute`)
+const { newMessage } = require('./moderation/commands');
 // nwm co to
 const embeds = require(`./embeds.js`)
 const prefix = "$"
