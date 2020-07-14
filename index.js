@@ -515,9 +515,6 @@ client.on('message', async message => {
         message.channel.send({files: ['wave.gif']});
     }
 
-    if  (message.content === `$`) {
-        message.channel.send(`Twoja ostatnia wiadomość: ${message.author.lastMessage}`)
-    }
 
 
 
