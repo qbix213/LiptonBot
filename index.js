@@ -339,14 +339,14 @@ client.on("ready",() => {
 
 client.on('guildMemberAdd', welcome.welcome);
 client.on('guildMemberRemove', leave.leave);
-client.on('client.on', ban.ban);
-client.on('client.on', kick.kick);
-client.on('client.on', embeds.embeds);
+
 
 
 
 client.on('message', async message => {
-
+ban.ban(message);
+kick.kick(message);
+embeds.embeds(message);
 
     if (message.content === "$help"){
         let msg = "";

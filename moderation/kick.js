@@ -1,4 +1,4 @@
-exports.kick = ('message', async message => {
+exports.kick = async message => {
 if (!message.guild) return;
   
 if (message.content.startsWith('$kick')) {
@@ -39,4 +39,4 @@ if (message.content.startsWith('$kick')) {
   }
 }
 
-});
+};

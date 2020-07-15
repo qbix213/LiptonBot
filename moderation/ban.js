@@ -1,4 +1,4 @@
-exports.ban = ('message', async message => {
+exports.ban = async message => {
 if (!message.guild) return;
   
 if (message.content.startsWith('$ban')) {
@@ -44,4 +44,4 @@ if (message.content.startsWith('$ban')) {
   }
 }
 
-});
+};

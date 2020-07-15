@@ -1,4 +1,5 @@
-exports.embeds = (async message => {
+const { MessageEmbed } = require('discord.js')
+exports.embeds = async message => {
     // If the message is "how to embed"
     if (message.content === '$embed') {
       // We can create embeds using the MessageEmbed constructor
@@ -11,4 +12,4 @@ exports.embeds = (async message => {
       message.channel.send(embed);
     }
 
-  });
+  };
