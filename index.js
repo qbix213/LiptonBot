@@ -31,7 +31,7 @@ const prefix = "$"
 
 
 
-const commands = [
+const help = [
     {
         "name": "$help",
         "description": "Wyświetla tą liste komend"
@@ -350,7 +350,7 @@ client.on('message', async message => {
 
     if (message.content === "$help"){
         let msg = "";
-        for (const command of commands){
+        for (const command of help){
             msg += `${command.name} - ${command.description}\n`
         }
         msg = msg.slice(0, -1)
