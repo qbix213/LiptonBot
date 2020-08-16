@@ -90,7 +90,7 @@ const reason = args.slice(3).join(" ")
 
   user.createDM()
     .then(dm => dm.send(`Zostałeś wyciszony na okres ${interval} ` +
-      `na serwerze *${msg.guild.name}*: ` + (reason || '(Brak powodu)')))
+      `na serwerze *${msg.guild.name}* przez ${msg.author.username} za: ` + (reason || '(Brak powodu)')))
     .catch(e => console.log(`Mute: Could not send DM: ${e}`));
 
   msg.channel.send(`Użytkownik <@!${user.id}> został wyciszony na okres ` +
