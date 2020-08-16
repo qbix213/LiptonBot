@@ -2,20 +2,26 @@ const { otherRegexes } = require('./helpers');
 
 const mutedRoleID = '732527085016580156';
 
-exports.mute = (msg, user, interval, reason) => {
+exports.mute = (msg) => {
+  if (!msg.content.startsWith("$mute")) return;
+const args = msg.content.split(" ")
+const user = msg.guild.members.cache.find(u => u.user === msg.mentions.users.first());
+if (!user) {
+  msg.channel.send('Nie znaleziono użytkownika, którego wspomniałeś!')
+  return;
+}
+
+
+
+
+
   if (!msg) {
     msg.channel.send('Wystąpił błąd podczas wyciszania!')
     console.log('Mute: msg is null/undefined');
     return;
   }
 
-  user = msg.guild.members.cache.find(u =>
-    u.id === user.match(otherRegexes.idFromTag)[1]);
 
-  if (!user) {
-    msg.channel.send('Nie znaleziono użytkownika, którego wspomniałeś!')
-    return;
-  }
 
   const mutedRole = msg.guild.roles.cache.find(r => r.id === mutedRoleID);
 
@@ -39,7 +45,7 @@ exports.mute = (msg, user, interval, reason) => {
     msg.channel.send('Nie możesz wyciszyć bota!')
     return;
   }
-
+const interval = args[2] 
   if (!interval) {
     msg.channel.send('Wystąpił błąd podczas wyciszania!')
     console.log('Mute: interval has not been provided');
@@ -68,7 +74,7 @@ exports.mute = (msg, user, interval, reason) => {
     intervalMs =
       interval.match(otherRegexes.numberFromInterval)[1] * 31536000000;
 
-
+const reason = args.slice(3).join(" ")
 
   user.roles.add(mutedRole);
   setTimeout(() => {

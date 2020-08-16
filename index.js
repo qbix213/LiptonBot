@@ -80,7 +80,7 @@ const moderationhelp = [
     },
     {
         "name": "$mute",
-        "description": "Wycisza użytkownika. Przykład: $mute @jankowalski 15s Spam [OFF]"
+        "description": "Wycisza użytkownika."
     }
 ]
 
@@ -347,6 +347,7 @@ client.on('message', async message => {
 ban.ban(message);
 kick.kick(message);
 embeds.embeds(message);
+mute.mute(message);
 
     if (message.content === "$help"){
         let msg = "";
@@ -519,7 +520,7 @@ embeds.embeds(message);
 
 
 
-    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam", "podszywasz", "pls kitty", "pls porn", "pls porngif", "pls boobies", "pls booty", "pls ass", "porn"]
+    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam","pls kitty", "pls porn", "pls porngif", "pls boobies", "pls booty", "pls ass", "porn"]
     let foundInText = false;
     for(var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
