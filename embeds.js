@@ -6,7 +6,7 @@ exports.embeds = async message => {
       // Read more about all that you can do with the constructor
       // over at https://discord.js.org/#/docs/main/master/class/MessageEmbed
       const embed = new MessageEmbed()
-        .setTitle(message.author.tag)
+        .setAuthor(message.author.tag, message.author.avatarURL())
         .setColor(0x1714B6)
         .setDescription('Hello, this is a slick embed!');
       message.channel.send(embed);
@@ -17,7 +17,7 @@ exports.embeds = async message => {
       // Read more about all that you can do with the constructor
       // over at https://discord.js.org/#/docs/main/master/class/MessageEmbed
       const embed = new MessageEmbed()
-        .setTitle(message.author.tag)
+        .setAuthor(message.author.tag, message.author.avatarURL())
         .setColor(0x1714B6)
         .setDescription('Hello, this is a slick embed!');
       message.channel.send(embed);
@@ -28,7 +28,7 @@ exports.embeds = async message => {
       // Read more about all that you can do with the constructor
       // over at https://discord.js.org/#/docs/main/master/class/MessageEmbed
       const embed = new MessageEmbed()
-        .setTitle(message.author.tag)
+        .setAuthor(message.author.tag, message.author.avatarURL())
         .setColor(0x1714B6)
         .setDescription('Hello, this is a slick embed!');
       message.channel.send(embed);
