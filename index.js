@@ -14,7 +14,7 @@ const { newMessage } = require('./moderation/commands');
 // nwm co to
 const embeds = require(`./embeds.js`)
 const prefix = "$"
-//const commands = "$help", "$help moderacja", "$zaproszenie", "$sklep", "$serwer", "$user-info", "$hello"
+//const commands = "$help", "$moderacja", "$zaproszenie", "$sklep", "$serwer", $hello"
 //const moderationhelp = "$kick", "$ban", "$warn", "$mute"
 //const store = "$kup nick", "$kup rola", "$kup kolor", "$kup nazwa", "$kup vc", "$kup pojemność",
 //"$kup whitelista", "$kup vc nazwa", "$kup unban", "$kup unwarn"
@@ -52,10 +52,6 @@ const help = [
         "name": "$serwer",
         "description": "Wyświetla informacje o serwerze"
 
-    },
-    {
-        "name": "$hello",
-        "description": "Wysyła GIF z machającą ręką"
     }
 
 
@@ -505,14 +501,10 @@ mute.mute(message);
         message.channel.send(`Nazwa serwera: ${message.guild.name}\nRazem osób: ${message.guild.memberCount}`);
     }
 
-    if (message.content.startsWith("$hello")) {
-        message.channel.send({files: ['wave.gif']});
-    }
 
 
 
-
-    let blacklisted = ["ameryka", "orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam","pls kitty", "pls porn", "pls porngif", "pls boobies", "pls booty", "pls ass", "porn"]
+    let blacklisted = ["orgazm", "gz", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam"]
     let foundInText = false;
     for(var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
