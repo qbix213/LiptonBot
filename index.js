@@ -335,6 +335,7 @@ ban.ban(message);
 kick.kick(message);
 embeds.embeds(message);
 mute.mute(message);
+mute.unmute(message);
 
     if (message.content === "$help"){
         let msg = "";

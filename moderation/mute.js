@@ -5,7 +5,7 @@ const mutedRoleID = '732527085016580156';
 exports.mute = (msg) => {
   if (!msg.content.startsWith("$mute")) return;
 const args = msg.content.split(" ")
-const user = msg.guild.members.cache.find(u => u.user === msg.mentions.users.first());
+let user = msg.guild.members.cache.find(u => u.user === msg.mentions.users.first());
 if (!user) {
   msg.channel.send('Nie znaleziono użytkownika, którego wspomniałeś!')
   return;
@@ -76,7 +76,7 @@ const interval = args[2]
 
 const reason = args.slice(3).join(" ")
 
-  user.roles.add(mutedRole);
+user.roles.add(mutedRole).catch(e => console.log(e));
   setTimeout(() => {
     if (user.roles.cache.find(r => r === mutedRole)) {
       user.roles.remove(mutedRole);
@@ -98,15 +98,18 @@ const reason = args.slice(3).join(" ")
 };
 
 
-exports.unmute = (msg, user) => {
+exports.unmute = (msg) => {
+  if (!msg.content.startsWith("$unmute")) return;
+
+  const user = msg.guild.members.cache.find(u =>
+  u.user === msg.mentions.users.first());
+
   if (!msg) {
     msg.channel.send('Wystąpił błąd podczas odciszania!')
     console.log('Unmute: msg is null/undefined');
     return;
   }
 
-  user = msg.guild.members.cache.find(u =>
-    u.id === user.match(otherRegexes.idFromTag)[1]);
 
   if (!user) {
     msg.channel.send('Nie znaleziono użytkownika, którego wspomniałeś!')
