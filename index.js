@@ -54,10 +54,6 @@ const help = [
 
     },
     {
-        "name": "$user-info",
-        "description": "Wyświetla informacje o użytkowniku"
-    },
-    {
         "name": "$hello",
         "description": "Wysyła GIF z machającą ręką"
     }
@@ -507,10 +503,6 @@ mute.mute(message);
 
     if (message.content === `$serwer`) {
         message.channel.send(`Nazwa serwera: ${message.guild.name}\nRazem osób: ${message.guild.memberCount}`);
-    }
-
-    if (message.content === `$user-info`) {
-        message.channel.send(`Twój nick: ${message.author.username}\nTwoje ID: ${message.author.id}\nTwój nick i tag: ${message.author.tag}\nUtworzyłeś konto: ${message.author.createdAt}`);
     }
 
     if (message.content.startsWith("$hello")) {
