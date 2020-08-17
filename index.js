@@ -10,6 +10,8 @@ const leave = require(`./leave.js`)
 const ban = require(`./moderation/ban`)
 const kick = require(`./moderation/kick`)
 const mute = require(`./moderation/mute`)
+const help = require(`./help.js`)
+const moderationhelp = require(`./help.js`)
 const { newMessage } = require('./moderation/commands');
 // nwm co to
 const embeds = require(`./embeds.js`)
@@ -29,47 +31,6 @@ const prefix = "$"
 //const unban
 //const unwarn
 
-
-
-const help = [
-    {
-        "name": "$help",
-        "description": "Wyświetla tą liste komend"
-    },
-    {
-        "name": "$moderacja",
-        "description": "Wyświetla komendy przydatne dla moderacji"
-    },
-    {
-        "name": "$zaproszenie",
-        "description": "Wysyła zaproszenie do dołączenia na serwer"
-    },
-    {
-        "name": "$sklep",
-        "description": "Wyświetla sklep serwera z vc, własnymi rangami itd"
-    }
-
-
-]
-
-const moderationhelp = [
-    {
-        "name": "$kick",
-        "description": "Wyrzuca użytkownika z serwera"
-    },
-    {
-        "name": "$ban",
-        "description": "Banuje użytkownika"
-    },
-    {
-        "name": "$warn",
-        "description": "Daje warna. Przykład: $warn @jankowalski Spam (według kanału regulamin) [OFF]"
-    },
-    {
-        "name": "$mute",
-        "description": "Wycisza użytkownika."
-    }
-]
 
 const store = [
     {
@@ -336,27 +297,8 @@ kick.kick(message);
 embeds.embeds(message);
 mute.mute(message);
 mute.unmute(message);
+help.help(message);
 
-    if (message.content === "$help"){
-        let msg = "";
-        for (const command of help){
-            msg += `${command.name} - ${command.description}\n`
-        }
-        msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Aktualna lista komend**", msg);
-        message.channel.send(embed)
-    }  
-
-
-    if (message.content === "$moderacja"){
-        let msg = "";
-        for (const command of moderationhelp){
-            msg += `${command.name} - ${command.description}\n`
-        }
-        msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Lista komend dla moderacji**", msg);
-        message.channel.send(embed)
-    }  
 
 
     if (message.content === "$sklep"){
