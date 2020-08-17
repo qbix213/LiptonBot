@@ -47,11 +47,6 @@ const help = [
     {
         "name": "$sklep",
         "description": "Wyświetla sklep serwera z vc, własnymi rangami itd"
-    },
-    {
-        "name": "$serwer",
-        "description": "Wyświetla informacje o serwerze"
-
     }
 
 
@@ -495,10 +490,6 @@ mute.mute(message);
         msg = msg.slice(0, -1)
         let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Zaproszenie na serwer**", msg);
         message.channel.send(embed)
-    }  
-
-    if (message.content === `$serwer`) {
-        message.channel.send(`Nazwa serwera: ${message.guild.name}\nRazem osób: ${message.guild.memberCount}`);
     }
 
 
