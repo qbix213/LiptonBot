@@ -347,7 +347,7 @@ mute.mute(message);
             msg += `${command.name} - ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Aktualna lista komend**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Aktualna lista komend**", msg);
         message.channel.send(embed)
     }  
 
@@ -358,7 +358,7 @@ mute.mute(message);
             msg += `${command.name} - ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Lista komend dla moderacji**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Lista komend dla moderacji**", msg);
         message.channel.send(embed)
     }  
 
@@ -369,7 +369,7 @@ mute.mute(message);
             msg += `${command.name} - ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Sklep serwerowy**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Sklep serwerowy**", msg);
         message.channel.send(embed)
     }  
 
@@ -380,7 +380,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić zmianę nicku serwerowego**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić zmianę nicku serwerowego**", msg);
         message.channel.send(embed)
     }  
 
@@ -391,7 +391,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić własną rolę z kolorkiem**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić własną rolę z kolorkiem**", msg);
         message.channel.send(embed)
     }  
 
@@ -403,7 +403,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić zmianę koloru własnej roli**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić zmianę koloru własnej roli**", msg);
         message.channel.send(embed)
     }  
 
@@ -414,7 +414,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić zmianę nazwy własnej roli**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić zmianę nazwy własnej roli**", msg);
         message.channel.send(embed)
     }  
 
@@ -425,7 +425,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić własny kanał głosowy z whitelistą**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić własny kanał głosowy z whitelistą**", msg);
         message.channel.send(embed)
     }  
 
@@ -436,7 +436,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak zwiększyć pojemność własnego kanału**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak zwiększyć pojemność własnego kanału**", msg);
         message.channel.send(embed)
     }  
 
@@ -447,7 +447,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak zwiększyć whitelistę własnego kanału**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak zwiększyć whitelistę własnego kanału**", msg);
         message.channel.send(embed)
     }  
 
@@ -459,7 +459,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak zmienić nazwę własnego kanału**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak zmienić nazwę własnego kanału**", msg);
         message.channel.send(embed)
     }  
 
@@ -470,7 +470,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić unban dla znajomego**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić unban dla znajomego**", msg);
         message.channel.send(embed)
     }  
 
@@ -482,7 +482,7 @@ mute.mute(message);
             msg += `${command.name}. ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Szczegóły, jak kupić unwarn**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Szczegóły, jak kupić unwarn**", msg);
         message.channel.send(embed)
     }
     
@@ -493,7 +493,7 @@ mute.mute(message);
             msg += `${command.name} ${command.description}\n`
         }
         msg = msg.slice(0, -1)
-        let embed = new Discord.MessageEmbed().setColor("#CF5AFF").addField("**Zaproszenie na serwer**", msg);
+        let embed = new Discord.MessageEmbed().setColor("#1714B6").addField("**Zaproszenie na serwer**", msg);
         message.channel.send(embed)
     }  
 
