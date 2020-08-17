@@ -37,7 +37,7 @@ const help = [
         "description": "Wyświetla tą liste komend"
     },
     {
-        "name": "$help moderacja",
+        "name": "$moderacja",
         "description": "Wyświetla komendy przydatne dla moderacji"
     },
     {
@@ -356,7 +356,7 @@ mute.mute(message);
     }  
 
 
-    if (message.content === "$help moderacja"){
+    if (message.content === "$moderacja"){
         let msg = "";
         for (const command of moderationhelp){
             msg += `${command.name} - ${command.description}\n`
