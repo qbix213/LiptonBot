@@ -5,7 +5,7 @@
     "scripts": {
         "start": "node ."
     },
-    "author": "t0polsk1",
+    "author": "quenadares",
     "license": "ISC",
     "dependencies": {
         "@discordjs/opus": "^0.3.2",

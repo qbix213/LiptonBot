@@ -36,6 +36,10 @@ const moderationhelp = [
     {
         "name": "$mute",
         "description": "Wycisza użytkownika."
+    },
+    {
+        "name": "$unmute",
+        "description": "Odcisza wcześniej wyciszonych użytkowników"
     }
 ]
 

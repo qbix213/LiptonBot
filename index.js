@@ -16,7 +16,7 @@ const { newMessage } = require('./moderation/commands');
 // nwm co to
 const embeds = require(`./embeds.js`)
 const prefix = "$"
-//const commands = "$help", "$moderacja", "$zaproszenie", "$sklep", "$serwer", $hello"
+//const commands = "$help", "$moderacja", "$zaproszenie", "$sklep", $hello"
 //const moderationhelp = "$kick", "$ban", "$warn", "$mute"
 //const store = "$kup nick", "$kup rola", "$kup kolor", "$kup nazwa", "$kup vc", "$kup pojemność",
 //"$kup whitelista", "$kup vc nazwa", "$kup unban", "$kup unwarn"
