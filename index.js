@@ -299,7 +299,8 @@ mute.mute(message);
 mute.unmute(message);
 help.help(message);
 
-
+    if (message.content === "ziobro") return message.channel.send("ZIOBRO KURWO JEBANA PRZESTAŃ MI RODZINĘ PRZEŚLADOWAĆ!!!")
+    if (message.content === "<@!720248008091893812>") return message.channel.send("W czym mogę ci pomóc?\n Moja podstawowa komenda to $help")
 
     if (message.content === "$sklep"){
         let msg = "";
