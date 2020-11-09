@@ -439,7 +439,7 @@ help.help(message);
 
 
 
-    let blacklisted = ["orgazm", "chuj", "japierdole", "spierdalaj", "Nexe", "spierdalam", "pizda", "cipa", "kutas", "penis"]
+    let blacklisted = ["Nexe", "neoney"]
     let foundInText = false;
     for(var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
